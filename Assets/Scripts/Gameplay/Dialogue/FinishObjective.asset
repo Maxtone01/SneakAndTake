@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8716303733353652998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: cf30cb4e-c154-4185-8e5e-cf1712fba77b
+  m_EditorClassIdentifier: 
+  isPLayer: 1
+  dialogueText: no...
+  variants: []
+  rect:
+    serializedVersion: 2
+    x: 357
+    y: 82
+    width: 200
+    height: 100
+  onEnterDialogue: 
+  onExitDialogue: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df40254538a17dd4b90b4f005e38bbdf, type: 3}
+  m_Name: FinishObjective
+  m_EditorClassIdentifier: 
+  dialogueNodes:
+  - {fileID: 3785975968489055614}
+  - {fileID: 5879540609908059077}
+  - {fileID: 5023001051264613554}
+  - {fileID: -8716303733353652998}
+  nodeOffset: {x: 300, y: 0}
+--- !u!114 &3785975968489055614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: 90b3be2b-4213-469b-ab57-5de747a118d5
+  m_EditorClassIdentifier: 
+  isPLayer: 0
+  dialogueText: Hello, did you find Abobchik?
+  variants:
+  - b4b9438b-c83e-4516-93a3-be89a5d58ac4
+  - 931b3b45-d6a4-4ec3-a6aa-c68328bd6491
+  - cf30cb4e-c154-4185-8e5e-cf1712fba77b
+  rect:
+    serializedVersion: 2
+    x: 67
+    y: 164
+    width: 200
+    height: 100
+  onEnterDialogue: 
+  onExitDialogue: 
+--- !u!114 &5023001051264613554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: 1e6e443e-5abf-4f95-bc43-08f7cf42cf1d
+  m_EditorClassIdentifier: 
+  isPLayer: 0
+  dialogueText: 
+  variants: []
+  rect:
+    serializedVersion: 2
+    x: 662
+    y: 201
+    width: 200
+    height: 100
+  onEnterDialogue: 
+  onExitDialogue: 
+--- !u!114 &5879540609908059077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: b4b9438b-c83e-4516-93a3-be89a5d58ac4
+  m_EditorClassIdentifier: 
+  isPLayer: 1
+  dialogueText: Yes...
+  variants:
+  - 5714dba0-a361-4a50-bc9f-8773853a9668
+  - 1e6e443e-5abf-4f95-bc43-08f7cf42cf1d
+  rect:
+    serializedVersion: 2
+    x: 362
+    y: 201
+    width: 200
+    height: 100
+  onEnterDialogue: 
+  onExitDialogue: 

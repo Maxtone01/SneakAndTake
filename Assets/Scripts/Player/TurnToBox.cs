@@ -1,34 +1,48 @@
 using Assets.Scripts.Interfaces;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TurnToBox : MonoBehaviour, ISkill
 {
-    GameObject _modelToSwap;
+    [SerializeField]
+    public GameObject _modelToSwap;
+    private GameObject _modelInstance;
     GameObject _previousModel;
     private SliderController _slider;
+
+    public Action _onSwitchModel;
 
     private void Start()
     {
         _previousModel = GameObject.Find("PlayerModel");
         _slider = GameObject.Find("Slider").GetComponent<SliderController>();
+        _onSwitchModel += SwitchModelToBase;
     }
 
     public void SkillAction()
     {
         if (_previousModel.activeSelf)
         {
-            _previousModel.SetActive(false);
-            _modelToSwap = Instantiate(GetComponent<PlayerController>()._modelToSwap, this.transform.position, transform.rotation);
-            _modelToSwap.transform.SetParent(this.transform);
-            _slider.StartActions(true);
+            if (_slider.GetSkillState())
+            {
+                _previousModel.SetActive(false);
+                _modelInstance = Instantiate(_modelToSwap, this.transform.position, transform.rotation);
+                _modelInstance.transform.SetParent(this.transform);
+                _slider.StartActions(true);
+            }
         }
-        else 
+        else
         {
-            _previousModel.SetActive(true);
-            _slider.StopAllActions();
-            Destroy(_modelToSwap);
+            SwitchModelToBase();
         }
+    }
+
+    private void SwitchModelToBase()
+    {
+        _previousModel.SetActive(true);
+        _slider.StopAllActions();
+        Destroy(_modelInstance);
     }
 }

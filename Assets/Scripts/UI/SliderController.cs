@@ -7,28 +7,44 @@ using UnityEngine.UI;
 
 public class SliderController : MonoBehaviour
 {
-    [SerializeField] private Slider _sliderController;
+    [SerializeField] private Slider _slider;
+
+    private bool _canActivateSkill = true;
+
     private bool _skillActive;
 
-    private bool _canAdd;
+    private bool _canAdd = false;
+
+    private TurnToBox _skill;
 
     public void Start()
     {
+        _skill = GameObject.Find("Player").GetComponent<TurnToBox>();
         SetValueMax(4);
     }
 
     public void SetValueMax(int value)
     {
-        _sliderController.maxValue = value;
-        _sliderController.value = value;
+        _slider.maxValue = value;
+        _slider.value = value;
     }
 
     public void StartActions(bool canSubtract)
     {
-        _skillActive = canSubtract;
-        StopCoroutine(SliderAddValue());
-        StartCoroutine(SliderSubtractValue());
-        _canAdd = false;
+        if (_canActivateSkill)
+        {
+            _skillActive = canSubtract;
+            if (_canAdd)
+            {
+                StopCoroutine(SliderAddValue());
+            }
+            StartCoroutine(SliderSubtractValue());
+            _canAdd = false;
+        }
+        else 
+        {
+            Debug.Log("Wait for skil to coldown!");
+        }
     }
 
     public void StopAllActions()
@@ -36,6 +52,7 @@ public class SliderController : MonoBehaviour
         StopCoroutine(SliderSubtractValue());
         _skillActive = false;
         _canAdd = true;
+        _canActivateSkill = false;
         StartCoroutine(SliderAddValue());
     }
 
@@ -43,14 +60,15 @@ public class SliderController : MonoBehaviour
     {
         while(_skillActive)
         {
-            if (_sliderController.value == 0)
+            if (_slider.value == 0)
             {
                 _skillActive = false;
+                _skill._onSwitchModel.Invoke();
                 StopCoroutine(SliderSubtractValue());
             }
-            else 
+            else
             {
-                _sliderController.value -= 1;
+                _slider.value -= 1;
                 _canAdd = false;
                 yield return new WaitForSeconds(1f);
             }
@@ -61,21 +79,22 @@ public class SliderController : MonoBehaviour
     {
         while (_canAdd)
         {
-            if (_sliderController.value < _sliderController.maxValue)
+            if (_slider.value < _slider.maxValue)
             {
-                _sliderController.value += 1;
+                _slider.value += 1;
                 yield return new WaitForSeconds(1f);
             }
-            else 
+            if (_slider.value == _slider.maxValue)
             {
+                _canActivateSkill = true;
                 _canAdd = false;
                 StopCoroutine(SliderAddValue());
             }
         }
     }
 
-    public bool GetSlider()
+    public bool GetSkillState()
     {
-        return _skillActive;
+        return _canActivateSkill;
     }
 }

@@ -2,20 +2,21 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CameraSettings : MonoBehaviour
 {
     #region Variables
-    [SerializeField] private Text sensValue = null;
-    [SerializeField] private Slider sensSlider = null;
+    [SerializeField] private TextMeshProUGUI sensValue;
+    [SerializeField] private Slider sensSlider;
     [SerializeField] private PauseMenu _pauseMenu;
     [SerializeField] CinemachineFreeLook cameraSpeed;
 
-    private string _configFile;
+    /*Need to add config file!*/
+    //private string _configFile; 
     #endregion
-
 
     public void Start()
     {
@@ -24,7 +25,7 @@ public class CameraSettings : MonoBehaviour
         sensValue.text = GameManager.Instance.defaultCamSpeed.ToString();
         sensSlider.value = GameManager.Instance.defaultCamSpeed;
 
-        _configFile = "Assets/GameFiles/ConfigurationFile/" + "Configuration.txt";
+        //_configFile = "Assets/GameFiles/ConfigurationFile/" + "Configuration.txt";
     }
 
     public void UpdateMouseSensitivity()

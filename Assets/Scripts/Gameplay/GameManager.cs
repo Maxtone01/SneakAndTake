@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     private ConversantController conversantController;
     [SerializeField] GameObject cameraState;
     [SerializeField] QuestGiver _questGiver;
-    PlayerController _player;
+    PlayerGeneral _player;
     Animator animator;
 
     private void Awake()
@@ -26,9 +26,10 @@ public class GameManager : MonoBehaviour
         Instance = this;
         SettingsInitialization();
         conversantController = GameObject.FindGameObjectWithTag("Player").GetComponent<ConversantController>();
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerGeneral>();
         animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        _questGiver.GiveQuest();
+        //_player.Initialize(Assets.Scripts.Player.PlayerType.Guard);
+        //_questGiver.GiveQuest();
     }
 
     public void MouseState(States.GameStates action)
@@ -45,7 +46,6 @@ public class GameManager : MonoBehaviour
             case States.GameStates.Exit_Dialogue:
                 Cursor.visible = false;
                 cameraState.SetActive(true);
-                //_player._movementForce = 5f;
                 _player.enabled = true;
                 break;
         }

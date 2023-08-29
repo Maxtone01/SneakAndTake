@@ -75,7 +75,7 @@ public class PauseMenu : MonoBehaviour
 
     private void QuitGame()
     {
-
+        //to do quit mechanic
     }
     #endregion
 
@@ -95,7 +95,7 @@ public class PauseMenu : MonoBehaviour
 
     private void LoadGameMenu()
     {
-
+        //to do load game mechanic
     }
     public void ControlsMenu()
     {

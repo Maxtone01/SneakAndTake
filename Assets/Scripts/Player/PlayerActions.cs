@@ -8,8 +8,8 @@ public class PlayerActions : MonoBehaviour
 {
     public GameObject _grabbableItem;
     [SerializeField] GameObject _grabbablePosition;
-    [SerializeField] CompleteQuestOnItemCollect _completeQuest;
-    [SerializeField] PlayerController _playerController;
+    [SerializeField] CompleteQuest _completeQuest;
+    [SerializeField] PlayerGeneral _playerController;
     public InventoryObject inventory;
 
     float treshold = 0f;
@@ -28,6 +28,10 @@ public class PlayerActions : MonoBehaviour
                 animator.SetFloat("State", 0);
             }
         }
+        Quaternion newRotation = Quaternion.Euler(transform.rotation.eulerAngles.x,
+        Camera.main.transform.rotation.eulerAngles.y,
+        transform.rotation.eulerAngles.z);
+        transform.rotation = newRotation;
     }
 
     public void GrabItem(Animator animator)
@@ -39,7 +43,7 @@ public class PlayerActions : MonoBehaviour
         }
         if (treshold > 1)
         {
-            Destroy(_grabbableItem.GetComponent<Box>());
+            Destroy(_grabbableItem.GetComponent<BoxObserver>());
             _grabbableItem.transform.SetParent(_grabbablePosition.transform, true);
             _grabbableItem.transform.position = _grabbablePosition.transform.position;
             _playerController.canGrab = false;

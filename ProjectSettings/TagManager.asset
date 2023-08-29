@@ -7,6 +7,9 @@ TagManager:
   - HidableObject
   - Dialogue Panel
   - Grabbable
+  - Repairable
+  - Sneaker
+  - Guard
   layers:
   - Default
   - TransparentFX

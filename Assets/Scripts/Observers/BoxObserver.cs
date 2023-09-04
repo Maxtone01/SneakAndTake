@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxObserver : ObserversEventsHolder<BoxObserver>
+namespace Assets.Scripts.Observers
 {
-    
+    public class BoxObserver : ObserversEventsHolder<BoxObserver>
+    {
+
+    }
 }

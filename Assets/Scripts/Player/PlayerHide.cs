@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHide : MonoBehaviour
+namespace Assets.Scripts.Player
 {
-    
+    public class PlayerHide : MonoBehaviour
+    {
+
+    }
 }

@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrabbableObject : MonoBehaviour
+namespace Assets.Scripts.Player
 {
+    public class GrabbableObject : MonoBehaviour
+    {
 
+    }
 }

@@ -4,45 +4,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnToBox : MonoBehaviour, ISkill
+namespace Assets.Scripts.Player
 {
-    [SerializeField]
-    public GameObject _modelToSwap;
-    private GameObject _modelInstance;
-    GameObject _previousModel;
-    private SliderController _slider;
-
-    public Action _onSwitchModel;
-
-    private void Start()
+    public class TurnToBox : MonoBehaviour, ISkill
     {
-        _previousModel = GameObject.Find("PlayerModel");
-        _slider = GameObject.Find("Slider").GetComponent<SliderController>();
-        _onSwitchModel += SwitchModelToBase;
-    }
+        [SerializeField]
+        public GameObject _modelToSwap;
+        private GameObject _modelInstance;
+        GameObject _previousModel;
+        private SliderController _slider;
 
-    public void SkillAction()
-    {
-        if (_previousModel.activeSelf)
+        public Action _onSwitchModel;
+
+        private void Start()
         {
-            if (_slider.GetSkillState())
+            _previousModel = GameObject.Find("PlayerModel");
+            _slider = GameObject.Find("Slider").GetComponent<SliderController>();
+            _onSwitchModel += SwitchModelToBase;
+        }
+
+        public void SkillAction()
+        {
+            if (_previousModel.activeSelf)
             {
-                _previousModel.SetActive(false);
-                _modelInstance = Instantiate(_modelToSwap, this.transform.position, transform.rotation);
-                _modelInstance.transform.SetParent(this.transform);
-                _slider.StartActions(true);
+                if (_slider.GetSkillState())
+                {
+                    _previousModel.SetActive(false);
+                    _modelInstance = Instantiate(_modelToSwap, transform.position, transform.rotation);
+                    _modelInstance.transform.SetParent(transform);
+                    _slider.StartActions(true);
+                }
+            }
+            else
+            {
+                SwitchModelToBase();
             }
         }
-        else
-        {
-            SwitchModelToBase();
-        }
-    }
 
-    private void SwitchModelToBase()
-    {
-        _previousModel.SetActive(true);
-        _slider.StopAllActions();
-        Destroy(_modelInstance);
+        private void SwitchModelToBase()
+        {
+            _previousModel.SetActive(true);
+            _slider.StopAllActions();
+            Destroy(_modelInstance);
+        }
     }
 }

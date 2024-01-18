@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1946662667871378532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: 27002035-d474-4e7a-acd3-cd5cd39610fc
+  m_EditorClassIdentifier: 
+  isPLayer: 1
+  dialogueText: "\u041F\u0440\u0438\u0432\u0456\u0442, \u044F \u0433\u0440\u0430\u0432\u0435\u0446\u044C!"
+  variants:
+  - 3f928973-96e1-401c-a8ab-7700ff5dba74
+  - 3e79f1cb-9d77-47b3-ac88-0e33d27ea39e
+  - e807ec98-cf04-4d71-b847-1aa3f019b8c1
+  - af1ec67a-c001-47ee-bb4b-ca98c3b83b52
+  - 3f6e8b2c-938b-484a-abe6-e07ad4e7c3c2
+  - b50ecc2f-0a92-41e3-b866-8c9d659b220e
+  - e6d770fd-f94d-4249-850c-9d1e07e8dd85
+  - 4de3ce12-ba1a-4fad-971d-a2432970f67a
+  rect:
+    serializedVersion: 2
+    x: 34
+    y: 186
+    width: 200
+    height: 100
+  onEnterDialogue: 
+  onExitDialogue: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df40254538a17dd4b90b4f005e38bbdf, type: 3}
+  m_Name: StartingDialogue
+  m_EditorClassIdentifier: 
+  dialogueNodes:
+  - {fileID: -1946662667871378532}
+  - {fileID: 8182994756692549230}
+  - {fileID: 4430703263588697390}
+  nodeOffset: {x: 300, y: 0}
+--- !u!114 &4430703263588697390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: ecf27c04-1c85-4518-aef5-6e78aafcbe78
+  m_EditorClassIdentifier: 
+  isPLayer: 0
+  dialogueText: "\u0427\u0430\u0441 \u043F\u0440\u0438\u043D\u0435\u0441\u0442\u0438
+    \u043A\u043E\u0440\u043E\u0431\u043A\u0443!"
+  variants:
+  - e3f79dd9-1691-4172-a126-a61f1948e4eb
+  rect:
+    serializedVersion: 2
+    x: 640
+    y: 173
+    width: 200
+    height: 100
+  onEnterDialogue: 
+  onExitDialogue: Give Quest
+--- !u!114 &8182994756692549230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: b50ecc2f-0a92-41e3-b866-8c9d659b220e
+  m_EditorClassIdentifier: 
+  isPLayer: 0
+  dialogueText: "\u041F\u0440\u0438\u0432\u0456\u0442, \u0433\u0440\u0430\u0432\u0446\u044E."
+  variants:
+  - 66c3b9aa-e5e9-402b-a775-8972782fbc11
+  - 7a5dcd29-6fdb-40ee-a892-1f5308d85cd0
+  - ecf27c04-1c85-4518-aef5-6e78aafcbe78
+  rect:
+    serializedVersion: 2
+    x: 313
+    y: 221
+    width: 200
+    height: 100
+  onEnterDialogue: 
+  onExitDialogue: 

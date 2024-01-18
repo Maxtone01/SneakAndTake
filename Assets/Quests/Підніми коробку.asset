@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521654a79087e924c9a0f8188427109b, type: 3}
+  m_Name: "\u041F\u0456\u0434\u043D\u0456\u043C\u0438 \u043A\u043E\u0440\u043E\u0431\u043A\u0443"
+  m_EditorClassIdentifier: 
+  questName: "\u041F\u0456\u0434\u043D\u0456\u043C\u0438 \u043A\u043E\u0440\u043E\u0431\u043A\u0443"
+  objectives:
+  - reference: 1
+    description: "\u041F\u0456\u0434\u043D\u0456\u043C\u0438 \u043A\u043E\u0440\u043E\u0431\u043A\u0443"
+    itemToCollect: 1
+    itemCollected: 1
+  - reference: 2
+    description: "\u041F\u043E\u0441\u0442\u0430\u0432 \u043A\u043E\u0440\u043E\u0431\u043A\u0443
+      \u0432 \u0437\u043E\u043D\u0443"
+    itemToCollect: 0
+    itemCollected: 0
+  rewards: []
